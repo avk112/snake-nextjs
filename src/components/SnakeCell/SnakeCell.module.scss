@@ -1,0 +1,52 @@
+@use "../../styles" as *;
+
+.snakeHead {
+  position: absolute;
+  background: $winColor;
+  outline: 1px solid $standartFontColor;
+  z-index: 5;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.snake {
+  position: absolute;
+  background: $winColor;
+  outline: 1px solid $standartFontColor;
+}
+
+.ArrowRight {
+  transform: rotate(-90deg);
+}
+
+.ArrowLeft {
+  transform: rotate(90deg);
+}
+
+.ArrowUp {
+  transform: rotate(180deg);
+}
+
+.ArrowDown {
+  transform: rotate(0deg);
+}
+
+.gameOver {
+  background: $fontShadowColor;
+  animation: blinking 1s linear 0s 3;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

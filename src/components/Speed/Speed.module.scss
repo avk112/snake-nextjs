@@ -1,0 +1,39 @@
+@use "../../styles" as *;
+
+.speed {
+  @include standartBlock($direction: row, $width: auto);
+  gap: 0.5em;
+
+  @media screen and (max-device-width: $notepad) and (min-aspect-ratio: 1.4/1) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-device-width: $tablet) and (min-aspect-ratio: 1.4/1) {
+    font-size: 0.6em;
+  }
+
+  @media screen and (max-device-width: $tablet) and (max-aspect-ratio: 1.4/1) {
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 1.3em;
+  }
+
+  &__inputs {
+    @include standartBlock($direction: row, $width: auto);
+    gap: 1em;
+
+    &__item {
+      @include standartBlock($direction: row, $width: auto);
+      font-size: 1.3em;
+      font-weight: 500;
+      gap: 0.1em;
+
+      input {
+        margin: 0;
+        accent-color: $btnBackgroundColor;
+      }
+    }
+  }
+}

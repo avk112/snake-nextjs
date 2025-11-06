@@ -1,0 +1,90 @@
+@use '../../styles/' as *;
+
+.buttons {
+  @include standartBlock($direction: row, $align: space-between);
+  display: none;
+
+  @media screen and (max-device-width: $notepad) {
+    display: flex;
+    padding: 2% 0;
+  }
+
+  @media screen and (max-aspect-ratio: 1.4/1) {
+    padding: 4% 0;
+  }
+
+  button {
+    margin: 0;
+    overflow: hidden;
+
+    img {
+      width: 20px;
+      object-fit: cover;
+    }
+  }
+
+  &__up {
+    img {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__down {
+    img {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__left {
+    img {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__right {
+    img {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__leftAndRight {
+    @include standartBlock($direction: row, $justify: space-between);
+    width: 16%;
+
+    @media screen and (max-device-width: $notepad) and (max-aspect-ratio: 1.4/1) {
+      width: 20%;
+    }
+
+    @media screen and (max-device-width: $mobile) and (max-aspect-ratio: 1.4/1) {
+      width: 40%;
+    }
+
+    button {
+      width: 47%;
+      height: 100%;
+      padding: 10%;
+    }
+  }
+
+  &__upAndDown {
+    @include standartBlock($justify: flex-start);
+    width: 16%;
+
+    @media screen and (max-device-width: $notepad) and (max-aspect-ratio: 1.4/1) {
+      width: 20%;
+    }
+
+    @media screen and (max-device-width: $mobile) and (max-aspect-ratio: 1.4/1) {
+      width: 40%;
+    }
+
+    button {
+      width: 97%;
+      padding: 10% 35%;
+
+      &:first-child {
+        margin-bottom: 6%;
+      }
+    }
+  }
+}
