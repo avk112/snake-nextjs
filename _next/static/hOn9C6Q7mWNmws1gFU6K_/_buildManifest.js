@@ -3,8 +3,8 @@ self.__BUILD_MANIFEST = {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/snake-next//_next/:path+",
-        "destination": "/snake-next/_next/:path+"
+        "source": "/snake-nextjs//_next/:path+",
+        "destination": "/snake-nextjs/_next/:path+"
       }
     ],
     "fallback": []
